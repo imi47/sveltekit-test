@@ -9,12 +9,16 @@ export async function load({ params }) {
     as: 'raw',
     eager: true
   })
-  posts = Object.values(posts)
-  // console.log('test', posts)
-  posts = posts.map(el => {
-    return JSON.parse(el?.split('<!--')[1].split('-->')[0])
+  
+  console.log('test', posts)
+  posts = Object.keys(posts).map(el => {
+    let postVals = JSON.parse(posts[el]?.split('<!--')[1].split('-->')[0])
+    let slug = el.split('/')
+    slug = slug[slug.length-1].split('.md')[0]
+    postVals.slug = slug
+    return postVals
   })
-  // console.log(posts)
+
   return {
     data: posts
   };

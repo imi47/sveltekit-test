@@ -1,24 +1,24 @@
 <script>
-	import Counter from './Counter.svelte';
+	// import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
-	import SvelteMarkdown from 'svelte-markdown'
+	// import welcome_fallback from '$lib/images/svelte-welcome.png';
+	// import SvelteMarkdown from 'svelte-markdown'
 	// import post from '$lib/posts/post.md?raw'
-	const source = `
-  # This is a header
+// 	const source = `
+//   # This is a header
 
-This is a paragraph.
+// This is a paragraph.
 
-* This is a list
-* With two items
-  1. And a sublist
-  2. That is ordered
-    * With another
-    * Sublist inside
+// * This is a list
+// * With two items
+//   1. And a sublist
+//   2. That is ordered
+//     * With another
+//     * Sublist inside
 
-| And this is | A table |
-|-------------|---------|
-| With two    | columns |`
+// | And this is | A table |
+// |-------------|---------|
+// | With two    | columns |`
 
 // const post1 = post
 // console.log(post1)
@@ -30,7 +30,7 @@ This is a paragraph.
 </svelte:head>
 
 <section>
-	<h1>
+	<!-- <h1>
 		<span class="welcome">
 			<picture>
 				<source srcset={welcome} type="image/webp" />
@@ -46,7 +46,8 @@ This is a paragraph.
 	</h2>
 
 	<Counter />
-	<!-- <SvelteMarkdown source={post} /> -->
+	<SvelteMarkdown source={post} /> -->
+	<h1>Welcome!</h1>
 </section>
 
 <style>
@@ -62,7 +63,7 @@ This is a paragraph.
 		width: 100%;
 	}
 
-	.welcome {
+	/* .welcome {
 		display: block;
 		position: relative;
 		width: 100%;
@@ -76,5 +77,5 @@ This is a paragraph.
 		height: 100%;
 		top: 0;
 		display: block;
-	}
+	} */
 </style>

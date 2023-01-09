@@ -5,5 +5,4 @@
 </script>
 
 <h1>{data.title}</h1>
-<div>{@html data.content}</div>
 <SvelteMarkdown source={data.content} />

@@ -12,9 +12,6 @@
 
 	<footer>
 		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-		<a href="/posts/post1">post 1</a>
-		<a href="/posts/post2">post 2</a>
-		<a href="/posts">posts</a>
 	</footer>
 </div>
 
