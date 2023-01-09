@@ -5,7 +5,7 @@
 
 {#each data.data as post}
   <div>
-    <h3>title: <a href="/posts/{post.slug}">{post.title}</a></h3>
+    <h3>title: <a href="/post/{post.slug}">{post.title}</a></h3>
     <p>tag: {post.tag}</p>
   </div>
 {/each}
