@@ -3,21 +3,11 @@ import { error } from '@sveltejs/kit';
 // console.log(post)
 
 /** @type {import('./$types').PageLoad} */
-export async function load({ params }) {
-  // if (params.slug) {
-  let posts = import.meta.glob(`../../lib/posts/*.md`, {
-    as: 'raw',
-    eager: true
-  })
-  
-  console.log('test', posts)
-  posts = Object.keys(posts).map(el => {
-    let postVals = JSON.parse(posts[el]?.split('<!--')[1].split('-->')[0])
-    let slug = el.split('/')
-    slug = slug[slug.length-1].split('.md')[0]
-    postVals.slug = slug
-    return postVals
-  })
+export async function load({fetch}) {
+  // console.log('context', context)
+
+  let posts = await fetch('/api/posts')
+  posts = await posts.json()
 
   return {
     data: posts
@@ -27,4 +17,4 @@ export async function load({ params }) {
   // throw error(404, 'Not found');
 }
 
-export const prerender = true;
+export const prerender = false;
