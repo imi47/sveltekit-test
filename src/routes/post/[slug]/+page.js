@@ -1,13 +1,11 @@
 import { error } from '@sveltejs/kit';
-import getPost from '../../../lib/services/getPost';
  
 /** @type {import('./$types').PageLoad} */
 export async function load({ params, fetch }) {
   
   if (params.slug) {
-    // let post = await fetch(`/api/post?slug=${params.slug}`)
-    // return post = await post.json()
-    return getPost(params.slug)
+    let post = await fetch(`/api/post/${params.slug}`)
+    return post = await post.json()
   }
  
   throw error(404, 'Not found');

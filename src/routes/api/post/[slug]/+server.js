@@ -1,10 +1,9 @@
 import { error } from '@sveltejs/kit';
  
 /** @type {import('./$types').RequestHandler} */
-export async function GET({ url }) {
-  const slug = url.searchParams.get('slug')
+export async function GET({ params }) {
 
-  const post = (await import(`../../../lib/posts/${[slug]}.md?raw`)).default
+  const post = (await import(`../../../../lib/posts/${params.slug}.md?raw`)).default
     let str = post?.split('<!--')[1]
     str = str?.split('-->')[0]
     str = JSON.parse(str)
