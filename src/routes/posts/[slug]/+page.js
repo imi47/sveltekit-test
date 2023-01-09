@@ -5,8 +5,7 @@ export async function load({ params, fetch }) {
   
   if (params.slug) {
     let post = await fetch(`/api/post?slug=${params.slug}`)
-    post = await post.json()
-    return post
+    return post = await post.json()
   }
  
   throw error(404, 'Not found');

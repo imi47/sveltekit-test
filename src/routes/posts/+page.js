@@ -17,4 +17,4 @@ export async function load({fetch}) {
   // throw error(404, 'Not found');
 }
 
-export const prerender = false;
+export const prerender = true;
